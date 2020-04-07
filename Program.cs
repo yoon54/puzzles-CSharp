@@ -107,14 +107,19 @@ namespace puzzles
             while(listNames.Count > 0)
             {
                 Random rand = new Random();
-                int name = rand.Next(0, listNames.Count);
-                newListNames.Add(listNames[name]);
-                listNames.RemoveAt(name);
+                int person = rand.Next(0, listNames.Count);
+                newListNames.Add(listNames[person]);
+                listNames.RemoveAt(person);
+               
             } 
-            int j = newListNames.Count;
-            for (var idx = 0; idx < j; idx++)
+            
+            for (var idx = 0; idx < newListNames.Count; idx++)
                 {
                 Console.WriteLine(newListNames[idx]);
+                }
+
+            for (var idx = 0; idx < newListNames.Count ; idx++)
+                {
                 if(newListNames[idx].Length < 5)
                 {
                     newListNames.RemoveAt(idx);
